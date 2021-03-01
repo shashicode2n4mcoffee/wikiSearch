@@ -1,0 +1,26 @@
+<div class="box">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Word Count</th>
+                <th>Snippet</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let page of pages">
+                <td>
+                    <!-- To make word as Link -->
+                    <a target="_blank" [href]="  'https://en.wikipedia.org?curid='+page.pageid   ">
+                    {{page.title}}
+                </a>
+                </td>
+                <td>{{page.wordcount}}</td>
+                <!-- TO prevent XSS Attacks -->
+                <td [innerHTML]="page.snippet"></td>
+            </tr>
+    </table>
+</div>

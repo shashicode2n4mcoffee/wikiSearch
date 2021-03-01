@@ -1,0 +1,8 @@
+<div class="container">
+    <h1 class="title is-1">Wiki Search</h1>
+</div>
+
+<div class="container">
+    <app-search-bar (submitted)="onTerm($event)" class="p-3"></app-search-bar>
+    <app-page-list *ngIf="pages" [pages]="pages" class="p-3"></app-page-list>
+</div>
